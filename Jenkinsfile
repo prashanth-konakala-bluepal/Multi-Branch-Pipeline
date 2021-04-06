@@ -11,6 +11,13 @@ pipeline{
 			 }
 		 stages
 				{
+					stage("Git Checkout")
+						{
+						 steps
+								{
+								 git branch: 'Branch-1', url: 'https://github.com/prashanth-konakala-bluepal/Multi-Branch-Pipeline.git'
+								}
+						}
 					stage("Maven Build")
 						{
 						 steps
