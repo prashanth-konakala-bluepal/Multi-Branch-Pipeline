@@ -23,7 +23,7 @@ pipeline{
 						 steps
 								{
 								 sh "mvn clean package"
-								 sh "mv /var/lib/jenkins/workspace/Multi-Branch-Pipeline/webapp/target/*.war /var/lib/jenkins/workspace/Multi-Branch-Pipeline/webapp/target/simpleweb.war"
+								 sh "mv /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-6/webapp/target/*.war /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-6/webapp/target/Branch-6.war"
 								}
 						}		
 					stage("Deploying to Dev")
@@ -34,11 +34,11 @@ pipeline{
 										{
 										 sh """
 										
-											scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Branch-Pipeline/webapp/target/simpleweb.war ubuntu@52.14.15.3:/opt/tomcat/webapps/
+											scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-6/webapp/target/Branch-6.war ubuntu@3.17.175.98:/opt/tomcat/webapps/
 											
-											ssh ubuntu@52.14.15.3 /opt/tomcat/bin/shutdown.sh
+											ssh ubuntu@3.17.175.98 /opt/tomcat/bin/shutdown.sh
 											
-											ssh ubuntu@52.14.15.3 /opt/tomcat/bin/startup.sh
+											ssh ubuntu@3.17.175.98 /opt/tomcat/bin/startup.sh
 											
 										"""
 										}
