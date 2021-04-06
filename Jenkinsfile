@@ -15,7 +15,7 @@ pipeline{
 						{
 						 steps
 								{
-								 git branch: 'main', url: 'https://github.com/prashanth-konakala-bluepal/Multi-Branch-Pipeline.git'
+								 git branch: 'Branch-6', url: 'https://github.com/prashanth-konakala-bluepal/Multi-Branch-Pipeline.git'
 								}
 						}
 					stage("Maven Build")
@@ -34,7 +34,7 @@ pipeline{
 										{
 										 sh """
 										
-											scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-6/webapp/target/Branch-6.war ubuntu@3.17.175.98:/opt/tomcat/webapps/
+											scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-6/webapp/target/Branch-6.war ubuntu@3.135.210.190:/opt/tomcat/webapps/
 											
 										"""
 										}
