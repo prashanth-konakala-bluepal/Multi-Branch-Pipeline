@@ -1,6 +1,4 @@
-h1 {text-align: center;}
-
-<h1> Welcome to Simple Tomcat Deployment Project !!   </h1>
+<h1> style="text-align:center" Welcome to Simple Tomcat Deployment Project !!   </h1>
 <h1> This is Bluepal</h1>
 <h2> This is Dev Environment</h2>
 <h2>Deploying a War File From Branch-1 on Tomcat Using Jenkins Pipeline</h2>
