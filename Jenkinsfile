@@ -36,10 +36,6 @@ pipeline{
 										
 											scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-3/webapp/target/Branch-3.war ubuntu@3.17.175.98:/opt/tomcat/webapps/
 											
-											ssh ubuntu@3.17.175.98 /opt/tomcat/bin/shutdown.sh
-											
-											ssh ubuntu@3.17.175.98 /opt/tomcat/bin/startup.sh
-											
 										"""
 										}
 								}
