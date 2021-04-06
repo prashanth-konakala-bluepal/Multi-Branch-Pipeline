@@ -15,7 +15,7 @@ pipeline{
 						{
 						 steps
 								{
-								 git branch: 'main', url: 'https://github.com/prashanth-konakala-bluepal/Multi-Branch-Pipeline.git'
+								 git branch: 'Branch-2', url: 'https://github.com/prashanth-konakala-bluepal/Multi-Branch-Pipeline.git'
 								}
 						}
 					stage("Maven Build")
