@@ -15,7 +15,7 @@ pipeline{
 						 steps
 								{
 								 sh "mvn clean package"
-								 sh "mv /var/lib/jenkins/workspace/Multi-Branch-Pipeline_main/webapp/target/*.war /var/lib/jenkins/workspace/Multi-Branch-Pipeline_main/webapp/target/main.war"
+								 sh "mv /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-2/webapp/target/*.war /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-2/webapp/target/Branch-2.war"
 								}
 						}		
 					stage("Deploying to Dev")
@@ -26,7 +26,7 @@ pipeline{
 										{
 										 sh """
 										
-											scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Branch-Pipeline_main/webapp/target/main.war ubuntu@3.137.183.211:/opt/tomcat/webapps/
+											scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-2/webapp/target/Branch-2.war ubuntu@3.137.183.211:/opt/tomcat/webapps/
 																					
 										"""
 										}
