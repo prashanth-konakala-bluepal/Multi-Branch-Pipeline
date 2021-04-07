@@ -1,14 +1,6 @@
-pipeline{		 
-		 agent any
-		 
-		 environment
-			 {
-			  PATH = "/opt/apache-maven-3.6.3/bin:$PATH"
-			 }
-		 
-			 {
-			  PATH = "/opt/jdk-11.0.10/bin:$PATH"
-			 }
+pipeline{	
+		 agent { label 'master' }
+	
 		 stages
 				{
 					stage("Git Checkout")
@@ -23,7 +15,7 @@ pipeline{
 						 steps
 								{
 								 sh "mvn clean package"
-								 sh "mv /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-1/webapp/target/*.war /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-1/webapp/target/Branch-1.war"
+								 sh "mv /var/lib/jenkins/workspace/Multi-Branch-Pipeline_main/webapp/target/*.war /var/lib/jenkins/workspace/Multi-Branch-Pipeline_main/webapp/target/main.war"
 								}
 						}		
 					stage("Deploying to Dev")
@@ -34,8 +26,8 @@ pipeline{
 										{
 										 sh """
 										
-											scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-1/webapp/target/Branch-1.war ubuntu@3.135.210.190:/opt/tomcat/webapps/
-											
+											scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Branch-Pipeline_main/webapp/target/main.war ubuntu@3.137.183.211:/opt/tomcat/webapps/
+																					
 										"""
 										}
 								}
