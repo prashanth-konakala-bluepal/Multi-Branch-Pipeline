@@ -26,7 +26,7 @@ pipeline{
 										{
 										 sh """
 										
-											scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-5/webapp/target/Branch-5.war ubuntu@3.137.183.211:/opt/tomcat/webapps/
+											scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-5/webapp/target/Branch-5.war ubuntu@3.15.198.149:/opt/tomcat/webapps/
 																					
 										"""
 										}
