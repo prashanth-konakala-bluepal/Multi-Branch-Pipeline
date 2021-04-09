@@ -7,7 +7,7 @@ pipeline{
 						{
 						 steps
 								{
-								 git branch: 'Branch-6', url: 'https://github.com/prashanth-konakala-bluepal/Multi-Branch-Pipeline.git'
+								 git branch: 'Branch-7', url: 'https://github.com/prashanth-konakala-bluepal/Multi-Branch-Pipeline.git'
 								}
 						}
 					stage("Maven Build")
@@ -15,7 +15,7 @@ pipeline{
 						 steps
 								{
 								 sh "mvn clean package"
-								 sh "mv /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-6/webapp/target/*.war /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-6/webapp/target/Branch-6.war"
+								 sh "mv /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-7/webapp/target/*.war /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-7/webapp/target/Branch-7.war"
 								}
 						}		
 					stage("Deploying to Dev")
@@ -26,7 +26,7 @@ pipeline{
 										{
 										 sh """
 										
-											scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-6/webapp/target/Branch-6.war ubuntu@3.15.198.149:/opt/tomcat/webapps/
+											scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Branch-Pipeline_Branch-7/webapp/target/Branch-7.war ubuntu@3.15.198.149:/opt/tomcat/webapps/
 																					
 										"""
 										}
